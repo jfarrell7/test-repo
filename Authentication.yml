@@ -1,0 +1,33 @@
+---
+openapi: 3.0.2
+info:
+  title: API Authentication - 2.0
+  version: 2.0.0
+  description: API definition of Authentication
+  contact:
+  license:
+    name: MIT License
+    url: https://opensource.org/licenses/MIT
+paths:
+  /authentication:
+    summary: Authentication
+    get:
+      tags:
+      - authentication
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Authentication'
+              examples:
+                authentication_json:
+                  value:
+                    status: available
+          description: User Authentication
+      operationId: AuthenticateUser
+tags:
+- name: pastry
+  description: Pastry resource
